@@ -1007,6 +1007,10 @@
     get-random-values "^1.2.0"
     lodash "^4.17.15"
 
+"@sanity/cli@^2.10.0":
+  version "2.11.0"
+  resolved "https://registry.npmjs.org/@sanity/cli/-/cli-2.11.0.tgz#8ff186933929bd42bb802b1b6478aee67c893c9e"
+
 "@sanity/client@2.10.5":
   version "2.10.5"
   resolved "https://registry.npmjs.org/@sanity/client/-/client-2.10.5.tgz#27ba884f63aa597d4e14a172da2e642a3cb86ff0"
@@ -7211,6 +7215,10 @@ sanity-diff-patch@^1.0.9:
   resolved "https://registry.npmjs.org/sanity-diff-patch/-/sanity-diff-patch-1.0.9.tgz#fb1fa3b52c27d369878af57ba02fee779b3ca8bd"
   dependencies:
     diff-match-patch "^1.0.5"
+
+sanity-plugin-conditional-field@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-conditional-field/-/sanity-plugin-conditional-field-0.0.1.tgz#d2621bc4fc67e6055e08ea5d3844a79a4b61f814"
 
 sax@~1.2.4:
   version "1.2.4"
