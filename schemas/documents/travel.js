@@ -66,7 +66,7 @@ export default {
     },
     {
       title: 'Embarque em:',
-      name: 'boarding',
+      name: 'boardingPlace',
       type: 'string',
       placeholder: 'Nome da cidade',
     },
@@ -82,7 +82,7 @@ export default {
     },
     {
       title: 'Bloqueio',
-      name: 'hasBloqueio',
+      name: 'hasBlock',
       type: 'boolean',
     },
     {
