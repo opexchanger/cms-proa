@@ -19,7 +19,20 @@ export default {
         'Identificador da página da viagem na barra de endereços. Gere automaticamente com o botão "generate".',
       validation: (Rule) => Rule.required().error('O slug é obrigatório'),
     },
-
+    {
+      name: 'category',
+      title: 'Categoria a que pertence',
+      type: 'reference',
+      to: [{ type: 'category' }],
+      validation: (Rule) => Rule.required().error('O tipo de viagem é obrigatória'),
+    },
+    {
+      title: 'Subregião a que pertence',
+      name: 'subRegion',
+      type: 'reference',
+      to: [{ type: 'subRegion' }],
+      validation: (Rule) => Rule.required().error('A subregião é obrigatória'),
+    },
     {
       title: 'Imagem de capa',
       name: 'coverImage',
@@ -151,8 +164,6 @@ export default {
       },
       validation: (Rule) =>
         Rule.custom((cortesy, context) => {
-          console.log('cortesia');
-          console.log(cortesy);
           if (!cortesy && context.document.hasCortesy) {
             return 'O texto é obrigatório se a cortesia estiver habilitada';
           }
@@ -165,20 +176,6 @@ export default {
       name: 'content',
       type: 'textContent',
       description: 'O conteúdo principal da página da viagem',
-    },
-    {
-      title: 'Subregião a que pertence',
-      name: 'subRegion',
-      type: 'reference',
-      to: [{ type: 'subRegion' }],
-      validation: (Rule) => Rule.required().error('A subregião é obrigatória'),
-    },
-    {
-      title: 'Região a que pertence',
-      name: 'region',
-      type: 'reference',
-      to: [{ type: 'region' }],
-      validation: (Rule) => Rule.required().error('A região é obrigatória'),
     },
   ],
 };

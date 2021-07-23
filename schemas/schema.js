@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import region from './documents/region';
 import subRegion from './documents/subRegion';
 import travel from './documents/travel';
+import category from './documents/category';
 
 // objects
 import textContent from './objects/textContent';
@@ -23,6 +24,7 @@ export default createSchema({
     region,
     subRegion,
     travel,
+    category,
     textContent,
     slugValidated,
   ]),
