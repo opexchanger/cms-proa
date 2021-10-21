@@ -1,6 +1,6 @@
 export default {
   name: 'subRegion',
-  title: 'Sub-região',
+  title: 'Destino',
   description: 'O nível mais próximo de localização. Ex: país',
   type: 'document',
   fields: [

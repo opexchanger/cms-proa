@@ -4,28 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'locale',
-      title: 'Localidade',
-      type: 'string',
-      options: {
-        list: [
-          {
-            title: 'Português',
-            value: 'pt-BR',
-          },
-          {
-            title: 'Espanhol',
-            value: 'es-ES',
-          },
-          {
-            title: 'Inglês',
-            value: 'en-US',
-          },
-        ],
-      },
-      validation: (Rule) => Rule.required().error('A localidade é obrigatória'),
-    },
-    {
       name: 'title',
       title: 'Título da postagem',
       type: 'string',
@@ -55,6 +33,11 @@ export default {
       title: 'Excerto - Prévia da postagem',
       type: 'text',
       rows: 2,
+      validation: (Rule) => [
+        Rule.required().error('A prévia da postagem é obrigatória'),
+        Rule.min(20).warning('A prévia ideal deve ter no mínimo 20 caracteres'),
+        Rule.max(200).warning('A prévia ideal não deve passar dos 200 caracteres'),
+      ],
     },
     {
       name: 'date',
@@ -70,6 +53,9 @@ export default {
       name: 'content',
       title: 'Conteúdo',
       type: 'textContent',
+      validation: (Rule) => [
+        Rule.required().error('O conteúdo da postagem é obrigatório'),
+      ],
     },
     {
       name: 'author',

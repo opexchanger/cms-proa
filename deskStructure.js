@@ -1,0 +1,117 @@
+import S from '@sanity/desk-tool/structure-builder';
+import { RiFileTextFill, RiLandscapeFill } from "react-icons/ri";
+import { FaPencilAlt, FaNewspaper, FaUserCircle, FaPlane, FaTags, FaMap, FaMapPin } from "react-icons/fa";
+
+const hiddenDocTypes = (listItem) =>
+  ![
+    'home-page',
+    'region',
+    'subRegion',
+    'travel',
+    'category',
+    'author',
+    'post',
+  ].includes(listItem.getId());
+
+export default () =>
+  S.list()
+    .title('Conteúdo')
+    .items([
+      S.listItem()
+        .title('Textos')
+        .icon(RiFileTextFill)
+        .child(
+          S.list()
+            .title('Páginas')
+            .items([
+              S.listItem()
+                .title('Home')
+                .child(S.document().schemaType('home-page').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
+              // S.listItem()
+              //   .title('Contato')
+              //   .child(S.document().schemaType('about').documentId('about')),
+            ])
+        ),
+      S.listItem()
+        .title('Viagens')
+        .icon(FaPlane)
+        .child(
+          S.list()
+            .title('Cadastros das viagens')
+            .items([
+              S.listItem()
+                .title('Regiões(?)')
+                .schemaType('region')
+                .icon(FaMap)
+                .child(
+                  S.documentList('region')
+                    .title('Regiões(?)')
+                    .menuItems(S.documentTypeList('region').getMenuItems())
+                    .filter('_type == "region"')
+                ),
+              S.listItem()
+                .title('Destinos(?)')
+                .schemaType('subRegion')
+                .icon(FaMapPin)
+                .child(
+                  S.documentList('subRegion')
+                    .title('Destinos(?)')
+                    .menuItems(S.documentTypeList('subRegion').getMenuItems())
+                    .filter('_type == "subRegion"')
+                ),
+              S.listItem()
+                .title('Categorias de Viagem')
+                .schemaType('category')
+                .icon(FaTags)
+                .child(
+                  S.documentList('category')
+                    .title('Categorias de Viagem')
+                    .menuItems(S.documentTypeList('category').getMenuItems())
+                    .filter('_type == "category"')
+                ),
+              S.listItem()
+                .title('Viagens')
+                .schemaType('travel')
+                .icon(RiLandscapeFill)
+                .child(
+                  S.documentList('travel')
+                    .title('Viagens')
+                    .menuItems(S.documentTypeList('travel').getMenuItems())
+                    .filter('_type == "travel"')
+                ),
+            ])
+        ),
+      S.listItem()
+        .title('Blog')
+        .icon(FaPencilAlt)
+        .child(
+          S.list()
+            .title('Cadastros do Blog')
+            .items([
+              S.listItem()
+                .title('Postagens')
+                .schemaType('post')
+                .icon(FaNewspaper)
+                .child(
+                  S.documentList('post')
+                    .title('Postagens')
+                    .menuItems(S.documentTypeList('post').getMenuItems())
+                    .filter('_type == "post"')
+                ),
+              S.listItem()
+                .title('Autores')
+                .schemaType('author')
+                .icon(FaUserCircle)
+                .child(
+                  S.documentList('author')
+                    .title('Autores')
+                    .menuItems(S.documentTypeList('author').getMenuItems())
+                    .filter('_type == "author"')
+                ),
+            ])
+        ),
+      // This returns an array of all the document types
+      // defined in schema.js. We filter out those that we have
+      // defined the structure above
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
+    ]);

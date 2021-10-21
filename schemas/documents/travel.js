@@ -21,17 +21,17 @@ export default {
     },
     {
       name: 'category',
-      title: 'Categoria a que pertence',
+      title: 'Categoria a que pertence*',
       type: 'reference',
       to: [{ type: 'category' }],
       validation: (Rule) => Rule.required().error('O tipo de viagem é obrigatória'),
     },
     {
-      title: 'Subregião a que pertence',
+      title: 'Localização*',
       name: 'subRegion',
       type: 'reference',
       to: [{ type: 'subRegion' }],
-      validation: (Rule) => Rule.required().error('A subregião é obrigatória'),
+      validation: (Rule) => Rule.required().error('A localização é obrigatória'),
     },
     {
       title: 'Imagem de capa',
@@ -116,7 +116,7 @@ export default {
         {
           name: 'quantity',
           type: 'number',
-          title: 'Quantas crianças?',
+          title: 'Quantas crianças?*',
           validation: (Rule) =>
             Rule.custom((quantity, context) => {
               if (!quantity && context.document.hasChildFree) {
@@ -128,7 +128,7 @@ export default {
         {
           name: 'age',
           type: 'number',
-          title: 'Até qual idade?',
+          title: 'Até qual idade?*',
           validation: (Rule) =>
             Rule.custom((age, context) => {
               if (!age && context.document.hasChildFree) {
@@ -154,7 +154,7 @@ export default {
       type: 'boolean',
     },
     {
-      title: 'Texto da cortesia',
+      title: 'Texto da cortesia*',
       name: 'cortesy',
       type: 'string',
       placeholder: 'ex: Praia do Jacaré',
@@ -177,5 +177,16 @@ export default {
       type: 'textContent',
       description: 'O conteúdo principal da página da viagem',
     },
+    {
+      name: 'gallery',
+      title: 'Galeria de clientes',
+      type: 'array',
+      of: [{
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }]
+    }
   ],
 };

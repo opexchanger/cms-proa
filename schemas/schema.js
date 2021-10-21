@@ -10,6 +10,13 @@ import subRegion from './documents/subRegion';
 import travel from './documents/travel';
 import category from './documents/category';
 
+import home from './documents/pages/home';
+
+import post from './documents/blog/post';
+import author from './documents/blog/author';
+
+import companyInfo from './documents/companyInfo';
+
 // objects
 import textContent from './objects/textContent';
 import slugValidated from './objects/slugValidated';
@@ -21,10 +28,14 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    home,
     region,
     subRegion,
     travel,
     category,
+    author,
+    post,
+    companyInfo,
     textContent,
     slugValidated,
   ]),
