@@ -42,5 +42,15 @@ export default {
       name: "whatsapp",
       type: "string",
     },
+    {
+      title: "Link do Instagram",
+      name: "instagram",
+      type: "string",
+    },
+    {
+      title: "Link do Facebook",
+      name: "facebook",
+      type: "string",
+    },
   ],
 };

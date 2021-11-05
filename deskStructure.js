@@ -1,16 +1,19 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { RiFileTextFill, RiLandscapeFill } from "react-icons/ri";
-import { FaPencilAlt, FaNewspaper, FaUserCircle, FaPlane, FaTags, FaMap, FaMapPin } from "react-icons/fa";
+import { FaPencilAlt, FaNewspaper, FaUserCircle, FaPlane, FaTags, FaMap, FaMapPin, FaBuilding } from "react-icons/fa";
 
 const hiddenDocTypes = (listItem) =>
   ![
+    'geral',
     'home-page',
+    'modal',
     'region',
     'subRegion',
     'travel',
     'category',
     'author',
     'post',
+    'companyInfo',
   ].includes(listItem.getId());
 
 export default () =>
@@ -18,18 +21,21 @@ export default () =>
     .title('Conteúdo')
     .items([
       S.listItem()
-        .title('Textos')
+        .title('Conteúdo das Páginas')
         .icon(RiFileTextFill)
         .child(
           S.list()
             .title('Páginas')
             .items([
               S.listItem()
+                .title('Geral')
+                .child(S.document().schemaType('geral').documentId('geral')),
+              S.listItem()
                 .title('Home')
                 .child(S.document().schemaType('home-page').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
-              // S.listItem()
-              //   .title('Contato')
-              //   .child(S.document().schemaType('about').documentId('about')),
+              S.listItem()
+                .title('Modal de venda da viagem')
+                .child(S.document().schemaType('modal').documentId('modal')),
             ])
         ),
       S.listItem()
@@ -109,6 +115,15 @@ export default () =>
                     .filter('_type == "author"')
                 ),
             ])
+        ),
+      S.listItem()
+        .title('Informações da Empresa')
+        .icon(FaBuilding)
+        .child(
+          S.editor()
+            .id('companyInfo')
+            .schemaType('companyInfo')
+            .documentId('519c483c-cd8e-412d-9b99-5872751efa61')
         ),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have

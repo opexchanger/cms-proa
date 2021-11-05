@@ -5,18 +5,6 @@ export default {
   __experimental_actions: ['update', /*'create', 'delete',*/ 'publish'],
   fields: [
     {
-      title: "Slogan",
-      name: "slogan",
-      type: "string",
-      description: "Frase no cabeçalho logo abaixo da Logo"
-    },
-    {
-      title: "Texto dos botões Call to Action",
-      name: "ctaButtonText",
-      type: "string",
-      description: "Texto usado nos botões que abrem o formulário de contato"
-    },
-    {
       title: 'Benefícios listados no cabeçalho',
       name: 'tiles',
       type: 'object',
@@ -80,16 +68,6 @@ export default {
       title: "Texto do botão da seção Destinos",
       name: "destinationsButtonText",
       type: "string",
-    },
-    {
-      title: "Título da seção Contato",
-      name: "contactTitle",
-      type: "string",
-    },
-    {
-      title: "Texto da seção Contato",
-      name: "contactText",
-      type: "textContent",
     },
   ]
 }

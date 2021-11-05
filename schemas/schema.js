@@ -10,7 +10,9 @@ import subRegion from './documents/subRegion';
 import travel from './documents/travel';
 import category from './documents/category';
 
+import geral from './documents/pages/geral';
 import home from './documents/pages/home';
+import modal from './documents/pages/modal';
 
 import post from './documents/blog/post';
 import author from './documents/blog/author';
@@ -28,7 +30,9 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    geral,
     home,
+    modal,
     region,
     subRegion,
     travel,
