@@ -6,6 +6,8 @@ const hiddenDocTypes = (listItem) =>
   ![
     'geral',
     'home-page',
+    'team',
+    'testimonials',
     'modal',
     'region',
     'subRegion',
@@ -34,7 +36,13 @@ export default () =>
                 .title('Home')
                 .child(S.document().schemaType('home-page').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
               S.listItem()
-                .title('Modal de venda da viagem')
+                .title('Equipe')
+                .child(S.document().schemaType('team').documentId('team')),
+              S.listItem()
+                .title('Depoimentos')
+                .child(S.document().schemaType('testimonials').documentId('testimonials')),
+              S.listItem()
+                .title('Modal de venda')
                 .child(S.document().schemaType('modal').documentId('modal')),
             ])
         ),

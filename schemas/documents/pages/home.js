@@ -25,6 +25,25 @@ export default {
       type: "string",
     },
     {
+      title: 'Mosaico de fotos',
+      name: 'mosaic',
+      type: 'array',
+      of: [
+        {
+          title: 'Foto',
+          type: 'image',
+          fields: [
+            {
+              name: 'caption',
+              title: 'Legenda',
+              type: 'string',
+              options: { isHighlighted: true },
+            },
+          ],
+        },
+      ]
+    },
+    {
       title: "Título do bloco Experiências",
       name: "experiencesTitle",
       type: "string",
@@ -38,6 +57,11 @@ export default {
       title: "Texto do botão do bloco Experiências",
       name: "experiencesButtonText",
       type: "string",
+    },
+    {
+      title: 'Banner Promocional',
+      name: 'promoBanner',
+      type: 'image',
     },
     {
       title: "Título da seção Sobre",
@@ -68,45 +92,6 @@ export default {
       title: "Texto do botão da seção Destinos",
       name: "destinationsButtonText",
       type: "string",
-    },
-
-    {
-      title: "Título da seção Equipe",
-      name: "teamTitle",
-      type: "string",
-    },
-    // {
-    //   title: "Texto da seção Destinos",
-    //   name: "destinationsText",
-    //   type: "textContent",
-    // },
-    {
-      title: 'Funcionários',
-      name: 'employees',
-      type: 'array',
-      of: [
-        {
-          title: 'Funcionário',
-          type: 'object',
-          fields: [
-            {
-              title: 'Nome',
-              name: 'name',
-              type: 'string'
-            },
-            {
-              title: 'Função',
-              name: 'position',
-              type: 'string'
-            },
-            {
-              title: 'Foto',
-              name: 'photo',
-              type: 'image'
-            },
-          ]
-        }
-      ]
     },
   ]
 }
