@@ -23,7 +23,7 @@ export default () =>
     .title('Conteúdo')
     .items([
       S.listItem()
-        .title('Conteúdo das Páginas')
+        .title('Conteúdos do Site')
         .icon(RiFileTextFill)
         .child(
           S.list()
@@ -33,7 +33,7 @@ export default () =>
                 .title('Geral')
                 .child(S.document().schemaType('geral').documentId('geral')),
               S.listItem()
-                .title('Home')
+                .title('Página Home')
                 .child(S.document().schemaType('home-page').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
               S.listItem()
                 .title('Equipe')
@@ -42,8 +42,18 @@ export default () =>
                 .title('Depoimentos')
                 .child(S.document().schemaType('testimonials').documentId('testimonials')),
               S.listItem()
-                .title('Modal de venda')
+                .title('Formulário de venda')
                 .child(S.document().schemaType('modal').documentId('modal')),
+              // S.list()
+              //   .title('Banners')
+              //   .items([
+              //     S.listItem()
+              //       .title('Home')
+              //       .child(S.document().schemaType('banner').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
+              //     S.listItem()
+              //       .title('Home')
+              //       .child(S.document().schemaType('banner').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
+              //   ]),
             ])
         ),
       S.listItem()
