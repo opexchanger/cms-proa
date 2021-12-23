@@ -15,11 +15,11 @@ const PreviewIFrame = () =>
       const url = getPreviewUrl(displayed)
       return (
         <React.Fragment>
-          {
+          {/* {
             env !== 'development' && <div style={{ padding: '0 0.5em' }}>
               <p>This is your <a href="<#<deployments.web.url>#>" target="_blank" rel="noopener noreferrer">production site on Netlify</a>. <a href="/dashboard">Trigger a deploy</a> to see published changes.</p>
             </div>
-          }
+          } */}
           <iframe
             style={{
               width: '100%',
