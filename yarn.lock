@@ -1621,6 +1621,11 @@
     slate "^0.58.4"
     styled-components "^5.0.0"
 
+"@sanity/production-preview@^2.15.0":
+  version "2.15.0"
+  resolved "https://registry.npmjs.org/@sanity/production-preview/-/production-preview-2.15.0.tgz#95e1b554876105be970166c71f96e0e4ac1ce76d"
+  integrity sha512-qwhxogxfXeKmWLf4gqh0XEhLD+zEzX3YYHunJqVnT0K1SvRgSQce81zF7Zau8mZI1vPuNaUO+g+DzHs3p/wYTg==
+
 "@sanity/react-hooks@2.13.1":
   version "2.13.1"
   resolved "https://registry.npmjs.org/@sanity/react-hooks/-/react-hooks-2.13.1.tgz#9129d420bb3b86aa4483ea2ba01e8c08852e5d9a"
@@ -7706,7 +7711,7 @@ prompts@~2.3.2:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8563,6 +8568,16 @@ sanity-plugin-dashboard-widget-netlify@^1.2.1:
     abort-controller "^2.0.3"
     react-props-stream "^1.0.0"
     rxjs "^6.0.0"
+
+sanity-plugin-iframe-pane@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.npmjs.org/sanity-plugin-iframe-pane/-/sanity-plugin-iframe-pane-1.0.15.tgz#a23f6188fdfe26eec0c959649a87ff6aee60043a"
+  integrity sha512-c2wH0XwqRoIWmHmUWaqMECUSG1jF/SICqlpssZ5iisFo0N/DeS8bwQwvR0GwwQoW4AdO6Y/wUWfqOOdGb9Bmcg==
+  dependencies:
+    "@sanity/icons" "^1.2.1"
+    "@sanity/ui" "^0.36.12"
+    prop-types "15.7.2"
+    usehooks-ts "^1.2.0"
 
 sax@~1.2.4:
   version "1.2.4"
@@ -9705,6 +9720,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.npmjs.org/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
+
+usehooks-ts@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/usehooks-ts/-/usehooks-ts-1.2.0.tgz#e69ccf47e4d13367eec5577e888691d3d870cace"
+  integrity sha512-9FuA+AEkmv7Je+EGJbclkMjkI892Ijcvfv8btt5z8tTZu4EL/ebDVnqz6LPgYBSC+RONJkdly6ZxFb3oKb8QcQ==
 
 user-home@^2.0.0:
   version "2.0.0"

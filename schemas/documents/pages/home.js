@@ -93,5 +93,87 @@ export default {
       name: "destinationsButtonText",
       type: "string",
     },
+    {
+      title: "Título da seção Equipe",
+      name: "teamTitle",
+      type: "string",
+    },
+    {
+      title: "Texto da seção Equipe",
+      name: "teamText",
+      type: "textContent",
+    },
+    {
+      title: 'Funcionários',
+      name: 'employees',
+      type: 'array',
+      of: [
+        {
+          title: 'Funcionário',
+          type: 'object',
+          fields: [
+            {
+              title: 'Nome',
+              name: 'name',
+              type: 'string'
+            },
+            {
+              title: 'Função',
+              name: 'position',
+              type: 'string'
+            },
+            {
+              title: 'Link do Whatsapp',
+              name: 'whatsappLink',
+              type: 'url'
+            },
+            {
+              title: 'Foto',
+              name: 'photo',
+              type: 'image'
+            },
+          ]
+        }
+      ]
+    },
+    {
+      title: "Título da seção Depoimentos",
+      name: "testimonialsTitle",
+      type: "string",
+    },
+    {
+      title: "Texto da seção Depoimentos",
+      name: "testimonialsText",
+      type: "textContent",
+    },
+    {
+      title: 'Depoimentos',
+      name: 'testimonials',
+      type: 'array',
+      of: [
+        {
+          title: 'Depoimento',
+          type: 'object',
+          fields: [
+            {
+              title: 'Nome da pessoa',
+              name: 'name',
+              type: 'string'
+            },
+            {
+              title: 'Texto do depoimento',
+              name: 'text',
+              type: 'text',
+              rows: 4
+            },
+            {
+              title: 'Foto',
+              name: 'photo',
+              type: 'image'
+            },
+          ]
+        }
+      ]
+    },
   ]
 }

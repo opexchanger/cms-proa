@@ -2,6 +2,8 @@ import S from '@sanity/desk-tool/structure-builder';
 import { RiFileTextFill, RiLandscapeFill } from "react-icons/ri";
 import { FaPencilAlt, FaNewspaper, FaUserCircle, FaPlane, FaTags, FaMap, FaMapPin, FaBuilding } from "react-icons/fa";
 
+import PreviewIFrame from './components/previewIframe';
+
 const hiddenDocTypes = (listItem) =>
   ![
     'geral',
@@ -34,26 +36,15 @@ export default () =>
                 .child(S.document().schemaType('geral').documentId('geral')),
               S.listItem()
                 .title('Página Home')
-                .child(S.document().schemaType('home-page').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
-              S.listItem()
-                .title('Equipe')
-                .child(S.document().schemaType('team').documentId('team')),
-              S.listItem()
-                .title('Depoimentos')
-                .child(S.document().schemaType('testimonials').documentId('testimonials')),
+                .child(
+                  S.document()
+                    .schemaType('home-page')
+                    .documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')
+                    .views([S.view.form(), PreviewIFrame()])
+                ),
               S.listItem()
                 .title('Formulário de venda')
                 .child(S.document().schemaType('modal').documentId('modal')),
-              // S.list()
-              //   .title('Banners')
-              //   .items([
-              //     S.listItem()
-              //       .title('Home')
-              //       .child(S.document().schemaType('banner').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
-              //     S.listItem()
-              //       .title('Home')
-              //       .child(S.document().schemaType('banner').documentId('ee60bf9f-e09c-4779-b84b-0b2f5cd0494d')),
-              //   ]),
             ])
         ),
       S.listItem()
@@ -98,10 +89,14 @@ export default () =>
                 .schemaType('travel')
                 .icon(RiLandscapeFill)
                 .child(
-                  S.documentList('travel')
+                  S.documentTypeList('travel')
                     .title('Viagens')
-                    .menuItems(S.documentTypeList('travel').getMenuItems())
-                    .filter('_type == "travel"')
+                    .child(documentId =>
+                      S.document()
+                        .documentId(documentId)
+                        .schemaType('travel')
+                        .views([S.view.form(), PreviewIFrame()])
+                    )
                 ),
             ])
         ),

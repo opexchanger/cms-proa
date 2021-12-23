@@ -11,8 +11,6 @@ import travel from './documents/travel';
 import category from './documents/category';
 
 import geral from './documents/pages/geral';
-import team from './documents/pages/team';
-import testimonials from './documents/pages/testimonials';
 import home from './documents/pages/home';
 import modal from './documents/pages/modal';
 
@@ -34,8 +32,6 @@ export default createSchema({
   types: schemaTypes.concat([
     geral,
     home,
-    team,
-    testimonials,
     modal,
     region,
     subRegion,
@@ -48,5 +44,3 @@ export default createSchema({
     slugValidated,
   ]),
 });
-
-//
