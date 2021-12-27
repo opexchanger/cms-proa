@@ -8,7 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import region from './documents/region';
 import subRegion from './documents/subRegion';
 import travel from './documents/travel';
-import category from './documents/category';
+import category from './documents/travels/category';
 
 import geral from './documents/pages/geral';
 import home from './documents/pages/home';
@@ -17,7 +17,7 @@ import modal from './documents/pages/modal';
 import post from './documents/blog/post';
 import author from './documents/blog/author';
 
-import companyInfo from './documents/companyInfo';
+import companyInfo from './documents/info/companyInfo';
 
 // objects
 import textContent from './objects/textContent';
