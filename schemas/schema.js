@@ -5,10 +5,11 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // // documents
-import region from './documents/region';
-import subRegion from './documents/subRegion';
-import travel from './documents/travel';
+import region from './documents/travels/region';
+import subRegion from './documents/travels/subRegion';
+import travel from './documents/travels/travel';
 import category from './documents/travels/category';
+import group from './documents/travels/group';
 
 import geral from './documents/pages/geral';
 import home from './documents/pages/home';
@@ -22,6 +23,7 @@ import companyInfo from './documents/info/companyInfo';
 // objects
 import textContent from './objects/textContent';
 import slugValidated from './objects/slugValidated';
+import discount from './objects/discount';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,10 +39,12 @@ export default createSchema({
     subRegion,
     travel,
     category,
+    group,
     author,
     post,
     companyInfo,
     textContent,
     slugValidated,
+    discount
   ]),
 });

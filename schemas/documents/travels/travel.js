@@ -1,5 +1,3 @@
-import ConditionalField from 'sanity-plugin-conditional-field';
-
 export default {
   name: 'travel',
   title: 'Viagem',
@@ -42,9 +40,22 @@ export default {
       title: 'Preço a partir de:*',
       name: 'price',
       type: 'number',
-      description: 'Apenas o valor',
+      description: 'Apenas o valor numérico',
       placeholder: 'ex: 499.90',
       validation: (Rule) => Rule.required().error('O preço é obrigatório'),
+    },
+    {
+      title: 'Aplicar desconto',
+      name: 'hasDiscount',
+      type: 'boolean',
+    },
+    {
+      title: 'Configuração do desconto',
+      name: 'discount',
+      type: 'discount',
+      hidden: ({ document }) => {
+        return !document?.hasDiscount
+      },
     },
     {
       title: 'Em até quantas vezes?',
@@ -112,6 +123,9 @@ export default {
       title: 'Detalhes do Child Free',
       name: 'childFree',
       type: 'object',
+      hidden: ({ document }) => {
+        return !document?.discount?.hasChildFree
+      },
       fields: [
         {
           name: 'quantity',
@@ -138,15 +152,6 @@ export default {
             }),
         },
       ],
-      inputComponent: ConditionalField,
-      options: {
-        condition: (document) => document.hasChildFree === true,
-      },
-      // isso aqui age só como um trigger pra ativar a validation dos fields dentro do objeto (bug do sanity)
-      validation: (Rule) =>
-        Rule.custom((childFree, context) => {
-          return true;
-        }),
     },
     {
       title: 'Cortesia',
@@ -158,9 +163,8 @@ export default {
       name: 'cortesy',
       type: 'string',
       placeholder: 'ex: Praia do Jacaré',
-      inputComponent: ConditionalField,
-      options: {
-        condition: (document) => document.hasCortesy === true,
+      hidden: ({ document }) => {
+        return !document?.discount?.hasCortesy
       },
       validation: (Rule) =>
         Rule.custom((cortesy, context) => {

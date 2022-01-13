@@ -1,6 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { RiFileTextFill, RiLandscapeFill } from "react-icons/ri";
 import { FaPencilAlt, FaNewspaper, FaUserCircle, FaPlane, FaTags, FaMap, FaMapPin, FaBuilding } from "react-icons/fa";
+import { BsStack } from "react-icons/bs";
 
 import PreviewIFrame from './components/previewIframe';
 
@@ -14,6 +15,7 @@ const hiddenDocTypes = (listItem) =>
     'region',
     'subRegion',
     'travel',
+    'group',
     'category',
     'author',
     'post',
@@ -97,6 +99,14 @@ export default () =>
                         .schemaType('travel')
                         .views([S.view.form(), PreviewIFrame()])
                     )
+                ),
+              S.listItem()
+                .title('Grupos')
+                .schemaType('group')
+                .icon(BsStack)
+                .child(
+                  S.documentTypeList('group')
+                    .title('Grupos')
                 ),
             ])
         ),
