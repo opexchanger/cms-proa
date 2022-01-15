@@ -175,5 +175,20 @@ export default {
         }
       ]
     },
+    {
+      title: "Título da seção Newsletter",
+      name: "newsletterTitle",
+      type: "string",
+    },
+    {
+      title: "Texto da seção Newsletter",
+      name: "newsletterText",
+      type: "textContent",
+    },
+    {
+      title: "Opções da Newsletter",
+      name: "newsletterConfig",
+      type: "newsletter",
+    },
   ]
 }
