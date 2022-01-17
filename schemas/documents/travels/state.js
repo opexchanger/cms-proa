@@ -1,7 +1,6 @@
 export default {
-  name: 'subRegion',
-  title: 'Destino',
-  description: 'O nível mais próximo de localização. Ex: país',
+  name: 'state',
+  title: 'Estado',
   type: 'document',
   fields: [
     {
@@ -10,10 +9,10 @@ export default {
       type: 'string',
     },
     {
-      title: 'Região a que pertence',
-      name: 'region',
+      title: 'País a que pertence',
+      name: 'country',
       type: 'reference',
-      to: [{ type: 'region' }],
+      to: [{ type: 'country' }],
     },
     {
       title: 'Descrição',

@@ -26,9 +26,9 @@ export default {
     },
     {
       title: 'Localização*',
-      name: 'subRegion',
+      name: 'city',
       type: 'reference',
-      to: [{ type: 'subRegion' }],
+      to: [{ type: 'city' }],
       validation: (Rule) => Rule.required().error('A localização é obrigatória'),
     },
     {

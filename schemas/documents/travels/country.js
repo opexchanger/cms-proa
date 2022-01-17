@@ -1,8 +1,7 @@
 export default {
-  name: 'region',
-  title: 'Região',
+  name: 'country',
+  title: 'País',
   type: 'document',
-  description: 'O nível mais amplo de localização. Ex: continente',
   fields: [
     {
       title: 'Nome',

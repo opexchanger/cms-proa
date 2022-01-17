@@ -2,6 +2,7 @@ import S from '@sanity/desk-tool/structure-builder';
 import { RiFileTextFill, RiLandscapeFill } from "react-icons/ri";
 import { FaPencilAlt, FaNewspaper, FaUserCircle, FaPlane, FaTags, FaMap, FaMapPin, FaBuilding } from "react-icons/fa";
 import { BsStack } from "react-icons/bs";
+import { GrMapLocation } from "react-icons/gr"
 
 import PreviewIFrame from './components/previewIframe';
 
@@ -12,8 +13,10 @@ const hiddenDocTypes = (listItem) =>
     'team',
     'testimonials',
     'modal',
-    'region',
-    'subRegion',
+    'country',
+    'state',
+    'city',
+    'commercialRegion',
     'travel',
     'group',
     'category',
@@ -57,24 +60,63 @@ export default () =>
             .title('Cadastros das viagens')
             .items([
               S.listItem()
-                .title('Regiões(?)')
-                .schemaType('region')
+                .title('Localidades')
                 .icon(FaMap)
                 .child(
-                  S.documentList('region')
-                    .title('Regiões(?)')
-                    .menuItems(S.documentTypeList('region').getMenuItems())
-                    .filter('_type == "region"')
+                  S.list()
+                    .title('Localidades')
+                    .items([
+                      S.listItem()
+                        .title('Países')
+                        .schemaType('country')
+                        .icon(FaMapPin)
+                        .child(
+                          S.documentTypeList('country')
+                            .title('Países')
+                            .child(documentId =>
+                              S.document()
+                                .documentId(documentId)
+                                .schemaType('country')
+                                .views(S.view.form())
+                            )
+                        ),
+                      S.listItem()
+                        .title('Estados')
+                        .schemaType('state')
+                        .icon(FaMapPin)
+                        .child(
+                          S.documentTypeList('state')
+                            .title('Países')
+                            .child(documentId =>
+                              S.document()
+                                .documentId(documentId)
+                                .schemaType('state')
+                                .views(S.view.form())
+                            )
+                        ),
+                      S.listItem()
+                        .title('Cidades')
+                        .schemaType('city')
+                        .icon(FaMapPin)
+                        .child(
+                          S.documentTypeList('city')
+                            .title('Países')
+                            .child(documentId =>
+                              S.document()
+                                .documentId(documentId)
+                                .schemaType('city')
+                                .views(S.view.form())
+                            )
+                        ),
+                    ])
                 ),
               S.listItem()
-                .title('Destinos(?)')
-                .schemaType('subRegion')
-                .icon(FaMapPin)
+                .title('Regiões Habilitadas')
+                .schemaType('commercialRegion')
+                .icon(GrMapLocation)
                 .child(
-                  S.documentList('subRegion')
-                    .title('Destinos(?)')
-                    .menuItems(S.documentTypeList('subRegion').getMenuItems())
-                    .filter('_type == "subRegion"')
+                  S.documentTypeList('commercialRegion')
+                    .title('Regioes Habilitadas')
                 ),
               S.listItem()
                 .title('Categorias de Viagem')

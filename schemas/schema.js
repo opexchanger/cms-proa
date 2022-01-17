@@ -5,8 +5,11 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // // documents
-import region from './documents/travels/region';
-import subRegion from './documents/travels/subRegion';
+import country from './documents/travels/country';
+import state from './documents/travels/state';
+import city from './documents/travels/city';
+import commercialRegion from './documents/travels/commercialRegion';
+
 import travel from './documents/travels/travel';
 import category from './documents/travels/category';
 import group from './documents/travels/group';
@@ -36,8 +39,10 @@ export default createSchema({
     geral,
     home,
     modal,
-    region,
-    subRegion,
+    country,
+    state,
+    city,
+    commercialRegion,
     travel,
     category,
     group,
