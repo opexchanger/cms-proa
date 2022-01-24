@@ -16,7 +16,7 @@ const hiddenDocTypes = (listItem) =>
     'country',
     'state',
     'city',
-    'commercialRegion',
+    'customRegion',
     'travel',
     'group',
     'category',
@@ -86,7 +86,7 @@ export default () =>
                         .icon(FaMapPin)
                         .child(
                           S.documentTypeList('state')
-                            .title('Países')
+                            .title('Estados')
                             .child(documentId =>
                               S.document()
                                 .documentId(documentId)
@@ -100,7 +100,7 @@ export default () =>
                         .icon(FaMapPin)
                         .child(
                           S.documentTypeList('city')
-                            .title('Países')
+                            .title('Cidades')
                             .child(documentId =>
                               S.document()
                                 .documentId(documentId)
@@ -111,12 +111,12 @@ export default () =>
                     ])
                 ),
               S.listItem()
-                .title('Regiões Habilitadas')
-                .schemaType('commercialRegion')
+                .title('Regiões Personalizadas')
+                .schemaType('customRegion')
                 .icon(GrMapLocation)
                 .child(
-                  S.documentTypeList('commercialRegion')
-                    .title('Regioes Habilitadas')
+                  S.documentTypeList('customRegion')
+                    .title('Regioes Personalizadas')
                 ),
               S.listItem()
                 .title('Categorias de Viagem')

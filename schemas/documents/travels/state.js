@@ -4,15 +4,17 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Nome',
-      name: 'name',
-      type: 'string',
-    },
-    {
       title: 'País a que pertence',
       name: 'country',
       type: 'reference',
       to: [{ type: 'country' }],
+      validation: (Rule) => Rule.required().error('O país é obrigatório'),
+    },
+    {
+      title: 'Nome',
+      name: 'title',
+      type: 'string',
+      validation: (Rule) => Rule.required().error('O nome é obrigatório'),
     },
     {
       title: 'Descrição',

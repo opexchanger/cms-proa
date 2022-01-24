@@ -7,12 +7,16 @@ const env = process.env.NODE_ENV || 'development'
 const PreviewIFrame = () =>
   S.view
     .component(({ document }) => {
-      console.log(document);
+      console.log('previewIframe being called');
+      let url;
+      React.useEffect(() => {
+        url = getPreviewUrl(displayed)
+      }, []);
+
       const { displayed } = document
       if (!displayed) {
         return <p>Nothing to display</p>
       }
-      const url = getPreviewUrl(displayed)
       return (
         <React.Fragment>
           {/* {

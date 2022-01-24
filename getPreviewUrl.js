@@ -22,7 +22,7 @@ export default function resolveProductionUrl(doc) {
   previewUrl.searchParams.append(`slug`, doc?.slug?.current ?? ``)
   urlDirectory && previewUrl.searchParams.append(`directory`, urlDirectory)
 
-  console.log('previewUrl :>> ', previewUrl);
+  console.log('calling resolveProductionUrl :>> ');
 
   return previewUrl.toString()
 }

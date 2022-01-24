@@ -8,7 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import country from './documents/travels/country';
 import state from './documents/travels/state';
 import city from './documents/travels/city';
-import commercialRegion from './documents/travels/commercialRegion';
+import customRegion from './documents/travels/customRegion';
 
 import travel from './documents/travels/travel';
 import category from './documents/travels/category';
@@ -42,7 +42,7 @@ export default createSchema({
     country,
     state,
     city,
-    commercialRegion,
+    customRegion,
     travel,
     category,
     group,

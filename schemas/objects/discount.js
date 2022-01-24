@@ -60,6 +60,9 @@ export default {
       title: 'Agendar desconto',
       name: 'hasSchedule',
       type: 'boolean',
+      hidden: ({ document }) => {
+        return !document?.discount?.format
+      },
     },
     {
       name: 'schedule',
