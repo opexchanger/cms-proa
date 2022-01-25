@@ -25,7 +25,14 @@ export default {
               name: 'title',
               type: 'string',
             },
-
+            {
+              title: 'Slug',
+              name: 'slug',
+              type: 'string',
+              initialValue: '/',
+              hidden: true,
+              readOnly: true
+            },
           ]
         },
         {
@@ -44,7 +51,21 @@ export default {
               name: 'title',
               type: 'string',
             },
+            {
+              title: 'Slug',
+              name: 'slug',
+              type: 'string',
+              initialValue: '/blog',
+              hidden: true,
+              readOnly: true
+            },
           ]
+        },
+        {
+          title: 'Título do SubMenu das Viagens',
+          name: 'travelsTitle',
+          type: 'string',
+          initialValue: 'Viagens',
         },
         {
           title: 'Destinos de Viagens',
