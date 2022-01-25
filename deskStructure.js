@@ -13,6 +13,7 @@ const hiddenDocTypes = (listItem) =>
     'team',
     'testimonials',
     'modal',
+    'menu',
     'country',
     'state',
     'city',
@@ -50,6 +51,9 @@ export default () =>
               S.listItem()
                 .title('Formulário de venda')
                 .child(S.document().schemaType('modal').documentId('modal')),
+              S.listItem()
+                .title('Menu do Site')
+                .child(S.document().schemaType('menu').documentId('menu')),
             ])
         ),
       S.listItem()

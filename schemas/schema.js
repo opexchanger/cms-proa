@@ -17,6 +17,7 @@ import group from './documents/travels/group';
 import geral from './documents/pages/geral';
 import home from './documents/pages/home';
 import modal from './documents/pages/modal';
+import menu from './documents/pages/menu';
 
 import post from './documents/blog/post';
 import author from './documents/blog/author';
@@ -39,6 +40,7 @@ export default createSchema({
     geral,
     home,
     modal,
+    menu,
     country,
     state,
     city,
