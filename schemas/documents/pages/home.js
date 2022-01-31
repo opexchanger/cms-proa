@@ -5,6 +5,11 @@ export default {
   __experimental_actions: ['update', /*'create', 'delete',*/ 'publish'],
   fields: [
     {
+      title: "Metadados da página",
+      name: "metadata",
+      type: "metadata",
+    },
+    {
       title: 'Benefícios listados no cabeçalho',
       name: 'tiles',
       type: 'object',

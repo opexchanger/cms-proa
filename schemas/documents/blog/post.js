@@ -30,13 +30,13 @@ export default {
     },
     {
       name: 'description',
-      title: 'Excerto - Prévia da postagem',
+      title: 'Descrição da postagem',
       type: 'text',
       rows: 2,
       validation: (Rule) => [
-        Rule.required().error('A prévia da postagem é obrigatória'),
-        Rule.min(20).warning('A prévia ideal deve ter no mínimo 20 caracteres'),
-        Rule.max(200).warning('A prévia ideal não deve passar dos 200 caracteres'),
+        Rule.required().error('A descrição da postagem é obrigatória'),
+        Rule.min(50).warning('O ideal é que a descrição tenha entre 50 e 160 caracteres'),
+        Rule.max(160).warning('O ideal é que a descrição tenha entre 50 e 160 caracteres'),
       ],
     },
     {

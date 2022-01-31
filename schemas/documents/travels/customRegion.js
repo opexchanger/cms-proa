@@ -20,6 +20,11 @@ export default {
       name: 'description',
       type: 'text',
       rows: 2,
+      validation: Rule => [
+        Rule.required().error('A Descrição é obrigatória'),
+        Rule.min(50).warning('O ideal é que a descrição tenha entre 50 e 160 caracteres'),
+        Rule.max(160).warning('O ideal é que a descrição tenha entre 50 e 160 caracteres')
+      ]
     },
     {
       title: 'Incluir Categoria:',

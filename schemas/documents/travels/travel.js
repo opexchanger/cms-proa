@@ -18,6 +18,18 @@ export default {
       validation: (Rule) => Rule.required().error('O slug é obrigatório'),
     },
     {
+      title: 'Descrição',
+      name: 'description',
+      type: 'text',
+      rows: 2,
+      description: 'Uma descrição curta para ser utilizada pelos mecanismos de busca (ideal entre 50 e 160 caracteres).',
+      validation: Rule => [
+        (Rule) => Rule.required().error('A Descrição é obrigatória'),
+        Rule.min(50).warning('O ideal é que a descrição tenha entre 50 e 160 caracteres'),
+        Rule.max(160).warning('O ideal é que a descrição tenha entre 50 e 160 caracteres')
+      ]
+    },
+    {
       name: 'category',
       title: 'Categoria a que pertence*',
       type: 'reference',

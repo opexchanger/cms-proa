@@ -38,7 +38,7 @@ export default () =>
             .title('Páginas')
             .items([
               S.listItem()
-                .title('Geral')
+                .title('Cabeçalho e Rodapé')
                 .child(S.document().schemaType('geral').documentId('geral')),
               S.listItem()
                 .title('Página Home')

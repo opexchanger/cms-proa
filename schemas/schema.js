@@ -29,6 +29,7 @@ import textContent from './objects/textContent';
 import slugValidated from './objects/slugValidated';
 import discount from './objects/discount';
 import newsletter from './objects/newsletter';
+import metadata from './objects/metadata';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -54,6 +55,7 @@ export default createSchema({
     textContent,
     slugValidated,
     discount,
-    newsletter
+    newsletter,
+    metadata
   ]),
 });
