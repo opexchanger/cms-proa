@@ -66,7 +66,22 @@ export default {
     {
       title: 'Banner Promocional',
       name: 'promoBanner',
-      type: 'image',
+      type: 'array',
+      of: [
+        {
+          title: 'Banner',
+          type: 'image',
+          fields: [
+            {
+              title: 'Link da Promoção',
+              name: 'link',
+              type: 'url',
+              options: { isHighlighted: true },
+              validation: (Rule) => Rule.required().error('A Promoção deve apontar pra alguma url'),
+            },
+          ],
+        },
+      ]
     },
     {
       title: "Título da seção Sobre",
